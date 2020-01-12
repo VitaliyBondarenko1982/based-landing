@@ -1,0 +1,260 @@
+@import "vars";
+@import "mixins";
+
+.portfolio {
+  min-width: 320px;
+  padding: 30px 0;
+  text-align: center;
+
+  &__title {
+    font-size: $font-size-30;
+    color: $orange-color;
+    font-weight: $font-weight-normal;
+    margin-bottom: 30px;
+  }
+
+  &__line {
+    margin-bottom: 20px;
+  }
+
+  &__line::before,
+  &__line::after {
+    width: calc(50% - 30px);
+    background: linear-gradient(90deg, $orange-color 50%,
+    rgba(0, 0, 0, 0) 100%);
+  }
+
+  &__decor {
+    margin: auto;
+    width: 26px;
+    height: 26px;
+    background-color: $white-color;
+    border: 1px solid $orange-color;
+  }
+
+  &__decor::before {
+    width: 40px;
+    height: 12px;
+    background-color: $white-color;
+  }
+
+  &__decor::after {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__filter {
+    margin-bottom: 35px;
+  }
+
+  &__filter-link {
+    display: block;
+    font-size: $font-size-20;
+    line-height: 30px;
+    color: $grey-text-color;
+
+    &:hover {
+      color: #4e4e4e;
+    }
+
+    &--active {
+      color: #2c3e50;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: inherit;
+    background-image: url(../images/portfolio/background-hover.png);
+  }
+
+  &__info {
+    position: absolute;
+    top: calc(100% - 70px);
+    left: 0;
+    right: 0;
+    z-index: 1;
+    color: #fff;
+    font-size: 30px;
+    line-height: 70px;
+    opacity: 0;
+    transition: opacity $transition-duration $easy-function;
+  }
+
+  &__image {
+    position: relative;
+    z-index: 1;
+    background-image: url(../images/portfolio/8.png);
+    @include image-centered;
+    height: inherit;
+    width: inherit;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    margin: auto;
+    height: 302px;
+    width: 100%;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: $white-color;
+      width: 47px;
+      height: 2px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity $transition-duration $easy-function;
+    }
+
+    &::after {
+      width: 2px;
+      height: 47px;
+    }
+
+    &:hover {
+
+      & .portfolio__background {
+        z-index: 1;
+      }
+
+      & .portfolio__info {
+        opacity: 1;
+      }
+
+      & .portfolio__image {
+        z-index: 0;
+      }
+
+      &::after,
+      &::before {
+        z-index: 2;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (min-width: 400px) {
+  .portfolio {
+    &__link {
+      width: 400px;
+    }
+  }
+}
+
+@media (min-width: $screen-width-medium) {
+  .portfolio {
+    padding: 72px 0;
+
+    &__title {
+      font-size: $font-size-50;
+      margin-bottom: 42px;
+    }
+
+    &__line::before,
+    &__line::after {
+      width: 280px;
+    }
+
+    &__filter {
+      @include flex-space-between;
+      width: 465px;
+      margin: auto;
+      margin-bottom: 35px;
+    }
+
+    &__filter-item {
+      position: relative;
+
+      &:not(:first-child)::before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: -15px;
+        width: 1px;
+        height: 20px;
+        background-color: $grey-text-color;
+        transform: rotate(30deg);
+      }
+    }
+
+    &__filter-link {
+      line-height: 70px;
+    }
+
+    &__gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    &__link {
+      width: 50%;
+
+      &:last-child {
+        display: none;
+      }
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: $screen-width-big) {
+  .portfolio {
+
+    &__link {
+      width: calc(100% / 3);
+
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .portfolio {
+    &__link {
+      width: 25%;
+
+      &:nth-last-child(-n+3) {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .portfolio {
+    &__link {
+      width: 20%;
+
+      &:nth-last-child(-n+3) {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: 2000px) {
+  .portfolio {
+    padding: 72px calc((100vw - 2000px) / 2);
+
+    &__link {
+      width: 400px;
+    }
+  }
+}

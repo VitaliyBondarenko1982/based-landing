@@ -1,0 +1,20 @@
+@import "vars";
+@import "mixins";
+
+.button {
+  font-size: $font-size-15;
+  color: $white-color;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border-radius: 3px;
+  background-color: $orange-color;
+  border: 1px solid $orange-color;
+  transition: color $transition-duration $easy-function,
+    background-color $transition-duration $easy-function;
+
+  &:hover {
+    color: $orange-color;
+    background-color: $white-color;
+  }
+}

@@ -1,7 +1,16 @@
-@import "utils";
-@import "fonts";
-@import "typography";
-
-body {
-  background: $c-gray;
-}
+@import "reset";
+@import "header";
+@import "nav";
+@import "button";
+@import "decor";
+@import "line";
+@import "about-us";
+@import "features";
+@import "skills";
+@import "skill-block";
+@import "portfolio";
+@import "contact";
+@import "team";
+@import "person";
+@import "footer";
+@import "pages";

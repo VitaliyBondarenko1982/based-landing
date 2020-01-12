@@ -1,0 +1,49 @@
+@import "vars";
+@import "mixins";
+
+.skill-block {
+  position: relative;
+
+  &__round {
+    width: 196px;
+    height: 196px;
+    transform: rotate(-90deg);
+
+    & circle {
+      fill: none;
+      stroke: $orange-color;
+      stroke-width: 8px;
+      stroke-linecap: round;
+    }
+  }
+
+  &:nth-child(1) &__round circle {
+    stroke-dasharray: calc(557 * 0.97) calc(557 * 0.03 + 8px);
+  }
+
+  &:nth-child(2) &__round circle {
+    stroke-dasharray: calc(557 * 0.99) calc(557 * 0.01 + 8px);
+  }
+  &:nth-child(3) &__round circle {
+    stroke-dasharray: calc(557 * 0.93) calc(557 * 0.07 + 8px);
+  }
+  &:nth-child(4) &__round circle {
+    stroke-dasharray: calc(557 * 0.89) calc(557 * 0.11 + 8px);
+  }
+
+  &__value {
+    position: absolute;
+    top: 73px;
+    @include horizontal-centered;
+    
+    font-size: $font-size-50;
+    line-height: 50px;
+  }
+
+  &__title {
+    font-size: $font-size-22;
+    font-weight: $font-weight-light;
+    line-height: 70px;
+    text-transform: uppercase;
+  }
+}
