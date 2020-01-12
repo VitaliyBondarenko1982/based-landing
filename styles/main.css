@@ -62,7 +62,9 @@ input[type="radio"].visually-hidden {
     margin-top: 0%; } }
 
 .nav {
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -713,8 +715,8 @@ input[type="radio"].visually-hidden {
     transition: box-shadow 400ms ease-in-out;
     transition: box-shadow 400ms ease-in-out, -webkit-box-shadow 400ms ease-in-out; }
     .contact__input:hover {
-      -webkit-box-shadow: 0px 0px 5px inset darkblue;
-              box-shadow: 0px 0px 5px inset darkblue; }
+      -webkit-box-shadow: 0 0 5px inset darkblue;
+              box-shadow: 0 0 5px inset darkblue; }
   .contact__button {
     width: 135px;
     font-size: 18px;
@@ -859,7 +861,7 @@ input[type="radio"].visually-hidden {
     line-height: 20px;
     font-weight: 300;
     margin-bottom: 20px; }
-  .footer__social {
+  .footer__links {
     margin: auto; }
 
 @media (min-width: 640px) {
@@ -877,7 +879,7 @@ input[type="radio"].visually-hidden {
     margin: auto; }
     .footer__text {
       margin-bottom: 0; }
-    .footer__social {
+    .footer__links {
       margin: 0; } }
 
 @media (min-width: 960px) {
@@ -888,7 +890,7 @@ input[type="radio"].visually-hidden {
   .footer {
     padding: 30px calc((100vw - 1170px) / 2); } }
 
-.social {
+.pages {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -896,16 +898,16 @@ input[type="radio"].visually-hidden {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 175px; }
-  .social__link {
+  .pages__link {
     position: relative;
     display: block;
     width: 30px;
     height: 33px;
     outline: none; }
-    .social__link:focus {
+    .pages__link:focus {
       border: 1px solid #92acc7;
       border-radius: 50%; }
-  .social__icon {
+  .pages__icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -914,11 +916,11 @@ input[type="radio"].visually-hidden {
     fill: #92acc7;
     -webkit-transition: fill 400ms ease-in-out, scale 400ms ease-in-out;
     transition: fill 400ms ease-in-out, scale 400ms ease-in-out; }
-    .social__icon:hover {
+    .pages__icon:hover {
       fill: #fff;
       -webkit-transform: translate(-50%, -50%) scale(1.2);
               transform: translate(-50%, -50%) scale(1.2); }
-    .social__icon:active {
+    .pages__icon:active {
       fill: #e74c3c; }
 
 /*# sourceMappingURL=main.css.map */
