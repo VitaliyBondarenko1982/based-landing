@@ -28,24 +28,12 @@
     background: linear-gradient(90deg, $white-color 50%, rgba(0, 0, 0, 0) 100%);
   }
 
-  &__decor {
-    margin: auto;
-    width: 26px;
-    height: 26px;
+  &__logo {
     background-color: #3b4b5c;
-    border: 1px solid $white-color;
-  }
 
-  &__decor::before {
-    width: 40px;
-    height: 12px;
-    background-color: #324455;
-  }
-
-  &__decor::after {
-    width: 18px;
-    height: 18px;
-    background-color: $white-color;
+    &::before {
+      background-color: #324455;
+    }
   }
 
   &__list {
@@ -82,7 +70,7 @@
 
 @media (min-width: $screen-width-big) {
   .skills {
-    &__decor::before {
+    &__logo::before {
       background-color: #495968;
     }
 
@@ -97,7 +85,7 @@
     padding: 72px calc((100vw - 1170px) / 2);
 
     &__list {
-      width: 1170px;
+      width: 1070px;
     }
   }
 }

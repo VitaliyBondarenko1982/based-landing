@@ -2,7 +2,7 @@
 @import "mixins";
 
 .person {
-  &__decor {
+  &__logo {
     position: relative;
     margin: auto;
     width: 155px;
@@ -12,13 +12,13 @@
     margin-bottom: 30px;
   }
 
-  &__decor::before {
+  &__logo::before {
     width: 219px;
     height: 68px;
     background-color: $white-color;
   }
 
-  &__decor::after {
+  &__logo::after {
     width: 110px;
     height: 110px;
     background-color: $white-color;

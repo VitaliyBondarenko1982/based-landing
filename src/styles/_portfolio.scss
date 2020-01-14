@@ -24,32 +24,31 @@
     rgba(0, 0, 0, 0) 100%);
   }
 
-  &__decor {
-    margin: auto;
-    width: 26px;
-    height: 26px;
-    background-color: $white-color;
-    border: 1px solid $orange-color;
-  }
-
-  &__decor::before {
-    width: 40px;
-    height: 12px;
-    background-color: $white-color;
-  }
-
-  &__decor::after {
-    width: 18px;
-    height: 18px;
-  }
-
   &__filter {
+    @include flex-space-between;
+    width: 280px;
+    margin: auto;
     margin-bottom: 35px;
+  }
+
+  &__filter-item {
+    position: relative;
+
+    &:not(:first-child)::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: -5px;
+      width: 1px;
+      height: 15px;
+      background-color: $grey-text-color;
+      transform: rotate(30deg);
+    }
   }
 
   &__filter-link {
     display: block;
-    font-size: $font-size-20;
+    font-size: 14px;
     line-height: 30px;
     color: $grey-text-color;
 
@@ -166,28 +165,22 @@
     }
 
     &__filter {
-      @include flex-space-between;
       width: 465px;
       margin: auto;
       margin-bottom: 35px;
     }
 
     &__filter-item {
-      position: relative;
 
       &:not(:first-child)::before {
-        content: "";
-        position: absolute;
         top: 25px;
         left: -15px;
-        width: 1px;
         height: 20px;
-        background-color: $grey-text-color;
-        transform: rotate(30deg);
       }
     }
 
     &__filter-link {
+      font-size: $font-size-20;
       line-height: 70px;
     }
 

@@ -23,25 +23,6 @@
     rgba(0, 0, 0, 0) 100%);
   }
 
-  &__decor {
-    margin: auto;
-    width: 26px;
-    height: 26px;
-    background-color: $white-color;
-    border: 1px solid $orange-color;
-  }
-
-  &__decor::before {
-    width: 40px;
-    height: 12px;
-    background-color: $white-color;
-  }
-
-  &__decor::after {
-    width: 18px;
-    height: 18px;
-  }
-
   &__description {
     position: relative;
     color: $grey-text-color;
@@ -64,11 +45,15 @@
   .team {
     padding: 72px 20px;
 
+    &__title {
+      font-size: $font-size-50;
+    }
+
     &__list {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      width: 450px;
+      width: 550px;
       margin: auto;
       margin-bottom: 75px;
     }

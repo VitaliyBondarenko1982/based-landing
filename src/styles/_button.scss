@@ -12,6 +12,7 @@
   border: 1px solid $orange-color;
   transition: color $transition-duration $easy-function,
     background-color $transition-duration $easy-function;
+  cursor: pointer;
 
   &:hover {
     color: $orange-color;

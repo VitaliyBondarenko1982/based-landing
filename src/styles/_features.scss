@@ -1,5 +1,7 @@
 .features {
-  &__decor {
+  color: $grey-text-color;
+
+  &__logo {
     position: relative;
     margin: auto;
     width: 100px;
@@ -7,18 +9,18 @@
     background-color: $white-color;
     border: 5px solid $lightgrey-color;
     margin-bottom: 20px;
-  }
 
-  &__decor::before {
-    width: 141px;
-    height: 50px;
-    background-color: $white-color;
-  }
+    &::before {
+      width: 141px;
+      height: 50px;
+      background-color: $white-color;
+    }
 
-  &__decor::after {
-    width: 75px;
-    height: 75px;
-    background-color: $lightgrey-color;
+    &::after {
+      width: 75px;
+      height: 75px;
+      background-color: $lightgrey-color;
+    }
   }
 
   &__image {
