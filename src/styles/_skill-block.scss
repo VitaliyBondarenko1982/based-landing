@@ -1,6 +1,46 @@
 @import "vars";
 @import "mixins";
 
+@keyframes dash-1 {
+  from {
+    stroke-dashoffset: 557px;
+  }
+
+  to {
+    stroke-dashoffset: calc(557px * 0.03);
+  }
+}
+
+@keyframes dash-2 {
+  from {
+    stroke-dashoffset: 557px;
+  }
+
+  to {
+    stroke-dashoffset: calc(557px * 0.01);
+  }
+}
+
+@keyframes dash-3 {
+  from {
+    stroke-dashoffset: 557px;
+  }
+
+  to {
+    stroke-dashoffset: calc(557px * 0.07);
+  }
+}
+
+@keyframes dash-4 {
+  from {
+    stroke-dashoffset: 557px;
+  }
+
+  to {
+    stroke-dashoffset: calc(557px * 0.11);
+  }
+}
+
 .skill-block {
   position: relative;
 
@@ -18,24 +58,28 @@
   }
 
   &:nth-child(1) &__round circle {
-    stroke-dasharray: calc(557 * 0.97) calc(557 * 0.03 + 8px);
+    stroke-dasharray: 557px;
+    animation: dash-1 5s linear forwards;
   }
 
   &:nth-child(2) &__round circle {
-    stroke-dasharray: calc(557 * 0.99) calc(557 * 0.01 + 8px);
+    stroke-dasharray: 557px;
+    animation: dash-2 5s linear forwards;
   }
   &:nth-child(3) &__round circle {
-    stroke-dasharray: calc(557 * 0.93) calc(557 * 0.07 + 8px);
+    stroke-dasharray: 557px;
+    animation: dash-3 5s linear forwards;
   }
   &:nth-child(4) &__round circle {
-    stroke-dasharray: calc(557 * 0.89) calc(557 * 0.11 + 8px);
+    stroke-dasharray: 557px;
+    animation: dash-4 5s linear forwards;
   }
 
   &__value {
     position: absolute;
     top: 73px;
     @include horizontal-centered;
-    
+
     font-size: $font-size-50;
     line-height: 50px;
   }
