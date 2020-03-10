@@ -480,6 +480,54 @@ input[type="radio"].visually-hidden {
     .skills__list {
       width: 1070px; } }
 
+@-webkit-keyframes dash-1 {
+  from {
+    stroke-dashoffset: 557px; }
+  to {
+    stroke-dashoffset: calc(557px * 0.03); } }
+
+@keyframes dash-1 {
+  from {
+    stroke-dashoffset: 557px; }
+  to {
+    stroke-dashoffset: calc(557px * 0.03); } }
+
+@-webkit-keyframes dash-2 {
+  from {
+    stroke-dashoffset: 557px; }
+  to {
+    stroke-dashoffset: calc(557px * 0.01); } }
+
+@keyframes dash-2 {
+  from {
+    stroke-dashoffset: 557px; }
+  to {
+    stroke-dashoffset: calc(557px * 0.01); } }
+
+@-webkit-keyframes dash-3 {
+  from {
+    stroke-dashoffset: 557px; }
+  to {
+    stroke-dashoffset: calc(557px * 0.07); } }
+
+@keyframes dash-3 {
+  from {
+    stroke-dashoffset: 557px; }
+  to {
+    stroke-dashoffset: calc(557px * 0.07); } }
+
+@-webkit-keyframes dash-4 {
+  from {
+    stroke-dashoffset: 557px; }
+  to {
+    stroke-dashoffset: calc(557px * 0.11); } }
+
+@keyframes dash-4 {
+  from {
+    stroke-dashoffset: 557px; }
+  to {
+    stroke-dashoffset: calc(557px * 0.11); } }
+
 .skill-block {
   position: relative; }
   .skill-block__round {
@@ -493,13 +541,21 @@ input[type="radio"].visually-hidden {
       stroke-width: 8px;
       stroke-linecap: round; }
   .skill-block:nth-child(1) .skill-block__round circle {
-    stroke-dasharray: calc(557 * 0.97) calc(557 * 0.03 + 8px); }
+    stroke-dasharray: 557px;
+    -webkit-animation: dash-1 5s linear forwards;
+            animation: dash-1 5s linear forwards; }
   .skill-block:nth-child(2) .skill-block__round circle {
-    stroke-dasharray: calc(557 * 0.99) calc(557 * 0.01 + 8px); }
+    stroke-dasharray: 557px;
+    -webkit-animation: dash-2 5s linear forwards;
+            animation: dash-2 5s linear forwards; }
   .skill-block:nth-child(3) .skill-block__round circle {
-    stroke-dasharray: calc(557 * 0.93) calc(557 * 0.07 + 8px); }
+    stroke-dasharray: 557px;
+    -webkit-animation: dash-3 5s linear forwards;
+            animation: dash-3 5s linear forwards; }
   .skill-block:nth-child(4) .skill-block__round circle {
-    stroke-dasharray: calc(557 * 0.89) calc(557 * 0.11 + 8px); }
+    stroke-dasharray: 557px;
+    -webkit-animation: dash-4 5s linear forwards;
+            animation: dash-4 5s linear forwards; }
   .skill-block__value {
     position: absolute;
     top: 73px;
