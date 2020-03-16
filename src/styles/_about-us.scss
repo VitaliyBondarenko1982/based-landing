@@ -56,6 +56,18 @@
     font-size: $font-size-18;
     line-height: 43px;
   }
+
+  &__link {
+    display: block;
+    width: 220px;
+    line-height: 43px;
+    color: $white-color;
+    transition: color $transition-duration $easy-function;
+
+    &:hover {
+      color: $orange-color;
+    }
+  }
 }
 
 @media (min-width: $screen-width-medium) {

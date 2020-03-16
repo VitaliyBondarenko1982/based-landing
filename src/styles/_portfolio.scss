@@ -24,43 +24,6 @@
     rgba(0, 0, 0, 0) 100%);
   }
 
-  &__filter {
-    @include flex-space-between;
-    width: 280px;
-    margin: auto;
-    margin-bottom: 35px;
-  }
-
-  &__filter-item {
-    position: relative;
-
-    &:not(:first-child)::before {
-      content: "";
-      position: absolute;
-      top: 8px;
-      left: -5px;
-      width: 1px;
-      height: 15px;
-      background-color: $grey-text-color;
-      transform: rotate(30deg);
-    }
-  }
-
-  &__filter-link {
-    display: block;
-    font-size: 14px;
-    line-height: 30px;
-    color: $grey-text-color;
-
-    &:hover {
-      color: #4e4e4e;
-    }
-
-    &--active {
-      color: #2c3e50;
-    }
-  }
-
   &__background {
     position: absolute;
     top: 0;
@@ -159,29 +122,13 @@
       margin-bottom: 42px;
     }
 
+    &__line {
+      margin-bottom: 40px;
+    }
+
     &__line::before,
     &__line::after {
       width: 280px;
-    }
-
-    &__filter {
-      width: 465px;
-      margin: auto;
-      margin-bottom: 35px;
-    }
-
-    &__filter-item {
-
-      &:not(:first-child)::before {
-        top: 25px;
-        left: -15px;
-        height: 20px;
-      }
-    }
-
-    &__filter-link {
-      font-size: $font-size-20;
-      line-height: 70px;
     }
 
     &__gallery {

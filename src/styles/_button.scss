@@ -10,12 +10,10 @@
   border-radius: 3px;
   background-color: $orange-color;
   border: 1px solid $orange-color;
-  transition: color $transition-duration $easy-function,
-    background-color $transition-duration $easy-function;
+  transition: background-color $transition-duration $easy-function;
   cursor: pointer;
 
   &:hover {
-    color: $orange-color;
     background-color: $white-color;
   }
 }

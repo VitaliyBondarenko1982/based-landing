@@ -129,10 +129,31 @@
   }
 
   &__button {
-    width: 107px;
-    font-size: 15px;
-    line-height: 36px;
     order: 1;
+    border: none;
+    border-radius: 3px;
+  }
+
+  &__sign-up-link {
+    display: block;
+    width: 107px;
+    font-size: $font-size-15;
+    line-height: 36px;
+    color: $white-color;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    border-radius: 3px;
+    background-color: $orange-color;
+    border: 1px solid $orange-color;
+    transition: color $transition-duration $easy-function,
+      background-color $transition-duration $easy-function;
+    cursor: pointer;
+
+    &:hover {
+      color: $orange-color;
+      background-color: $white-color;
+    }
   }
 }
 
