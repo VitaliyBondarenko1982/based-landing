@@ -6,6 +6,8 @@ const ENTER_KEYCODE = 13;
 const navMain = document.querySelector('.nav');
 const navToggle = document.querySelector('.nav__toggle');
 const header = document.querySelector('.header');
+const form = document.querySelector('.contact__form');
+const input = document.querySelector('.contact__input');
 
 const onToggleEscPress = function(evt) {
   if (evt.keyCode === ESC_KEYCODE) {
@@ -42,4 +44,10 @@ navToggle.addEventListener('keydown', function(evt) {
   } else {
     openMenu();
   }
+});
+
+form.addEventListener('submit', function(evt) {
+  evt.preventDefault();
+
+  input.value = '';
 });
