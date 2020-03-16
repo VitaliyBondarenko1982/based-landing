@@ -239,11 +239,12 @@ input[type="radio"].visually-hidden {
   border-radius: 3px;
   background-color: #e74c3c;
   border: 1px solid #e74c3c;
-  -webkit-transition: background-color 400ms ease-in-out;
-  transition: background-color 400ms ease-in-out;
+  -webkit-transition: background-color 400ms ease-in-out, color 400ms ease-in-out;
+  transition: background-color 400ms ease-in-out, color 400ms ease-in-out;
   cursor: pointer; }
   .button:hover {
-    background-color: #fff; }
+    background-color: #fff;
+    color: #e74c3c; }
 
 .logo {
   -webkit-transform: rotate(45deg);
