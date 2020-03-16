@@ -1,0 +1,32 @@
+@import "vars";
+@import "mixins";
+
+.line {
+  position: relative;
+
+  &::before,
+  &::after {
+    @include pseudo-element;
+    @include vertical-centered;
+    width: calc(50% - 10px);
+    height: 1px;
+  }
+
+  &::before {
+    left: calc(50% + 25px);
+  }
+
+  &::after {
+    right: calc(50% + 25px);
+    transform: rotate(180deg);
+  }
+}
+
+@media (min-width: $screen-width-medium) {
+  .line {
+    &::before,
+    &::after {
+      width: 280px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@mixin image-centered {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin pseudo-element {
+  content: "";
+  position: absolute;
+}
+
+@mixin horizontal-centered {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin vertical-centered {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}

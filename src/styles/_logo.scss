@@ -1,0 +1,57 @@
+.logo {
+  transform: rotate(45deg);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--orange {
+    margin: auto;
+    width: 26px;
+    height: 26px;
+    background-color: $white-color;
+    border: 1px solid $orange-color;
+
+    &::before {
+      width: 40px;
+      height: 12px;
+      background-color: $white-color;
+    }
+
+    &::after {
+      width: 18px;
+      height: 18px;
+      background-color: $orange-color;
+    }
+  }
+
+  &--white {
+    margin: auto;
+    width: 26px;
+    height: 26px;
+    border: 1px solid $white-color;
+
+    &::before {
+      width: 40px;
+      height: 12px;
+    }
+
+    &::after {
+      width: 18px;
+      height: 18px;
+      background-color: $white-color;
+    }
+  }
+}

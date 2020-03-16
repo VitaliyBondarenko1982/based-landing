@@ -1,0 +1,214 @@
+@import "vars";
+@import "mixins";
+
+@keyframes menu {
+  from {
+    margin-top: -100%;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 0 20px;
+  height: 65px;
+  background-color: $dark-text-color;
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    background-color: $dark-text-color;
+    border: 2px solid $orange-color;
+
+    &::before {
+      width: 60px;
+      height: 20px;
+      background-color: $dark-text-color;
+    }
+
+    &::after {
+      width: 27px;
+      height: 27px;
+      background-color: $orange-color;
+    }
+  }
+
+  &__toggle {
+    width: 40px;
+    height: 40px;
+    background-color: $dark-text-color;
+    border: none;
+    cursor: pointer;
+    order: 2;
+  }
+
+  &__list {
+    position: absolute;
+    top: calc(-100vh + 65px);
+    left: 0;
+    height: calc(100vh - 65px);
+    width: 100%;
+    background-color: $dark-text-color;
+    animation: menu $animation-duration $easy-function;
+    z-index: 1;
+  }
+
+  &--closed &__list {
+    display: none;
+  }
+
+  &--closed &__toggle {
+    top: 10px;
+    right: 50px;
+    background-color: $dark-text-color;
+  }
+
+  &--closed &__toggle::before,
+  &--closed &__toggle::after {
+    @include pseudo-element;
+    top: 15px;
+    right: 20px;
+
+    width: 40px;
+    height: 2px;
+    background-color: $orange-color;
+    box-shadow: 0 15px 0 0 $orange-color, 0 30px 0 0 $orange-color;
+  }
+
+  &--opened &__toggle {
+    &::before,
+    &::after {
+      @include pseudo-element;
+      top: 30px;
+      right: 15px;
+
+      width: 50px;
+      height: 2px;
+      background-color: $orange-color;
+      transition: transform $transition-duration $easy-function;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__item {
+    height: calc((100vh - 65px) / 6);
+    border-bottom: 1px solid #465d74;
+    border-top: 1px solid #244769;
+  }
+
+  &__link {
+    display: block;
+    font-size: $font-size-15;
+    line-height: calc((100vh - 65px) / 6);
+    color: #5c80a4;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: color 300ms ease-in-out;
+  }
+
+  &__link:hover {
+    color: $white-color;
+  }
+
+  &__button {
+    order: 1;
+    border: none;
+    border-radius: 3px;
+  }
+
+  &__sign-up-link {
+    display: block;
+    width: 107px;
+    font-size: $font-size-15;
+    line-height: 36px;
+    color: $white-color;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    border-radius: 3px;
+    background-color: $orange-color;
+    border: 1px solid $orange-color;
+    transition: color $transition-duration $easy-function,
+      background-color $transition-duration $easy-function;
+    cursor: pointer;
+
+    &:hover {
+      color: $orange-color;
+      background-color: $white-color;
+    }
+  }
+}
+
+@media (min-width: $screen-width-medium) {
+  .nav {
+    &--closed &__list,
+    &--opened &__list {
+      top: -40px;
+      @include flex-space-between;
+      width: 100%;
+      align-items: center;
+      height: 40px;
+      padding: 0 15px;
+      border-bottom: 1px solid #465d74;
+      animation: none;
+    }
+
+    &--closed &__toggle,
+    &--opened &__toggle {
+      display: none;
+    }
+
+    &__item {
+      height: 40px;
+      border: none;
+    }
+
+    &__link {
+      line-height: 40px;
+    }
+  }
+}
+
+@media (min-width: $screen-width-big) {
+  .nav {
+    &--closed &__list,
+    &--opened &__list {
+      position: static;
+      height: 65px;
+      width: 660px;
+      border: none;
+    }
+
+    &__item {
+      height: 65px;
+    }
+
+    &__link {
+      line-height: 65px;
+    }
+  }
+}
+
+@media (min-width: $screen-width-biggest) {
+  .nav {
+    padding: 0 calc((100vw - 1170px) / 2);
+  }
+}

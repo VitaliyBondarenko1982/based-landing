@@ -1,0 +1,12 @@
+@import "vars";
+@import "mixins";
+
+.header {
+  min-width: 320px;
+
+  &__image {
+    height: calc(100vh - 65px);
+    background-image: url(../images/promo.png);
+    @include image-centered;
+  }
+}

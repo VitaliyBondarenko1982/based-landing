@@ -1,0 +1,52 @@
+.features {
+  color: $grey-text-color;
+
+  &__logo {
+    position: relative;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    background-color: $white-color;
+    border: 5px solid $lightgrey-color;
+    margin-bottom: 20px;
+
+    &::before {
+      width: 141px;
+      height: 50px;
+      background-color: $white-color;
+    }
+
+    &::after {
+      width: 75px;
+      height: 75px;
+      background-color: $lightgrey-color;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    z-index: 1;
+  }
+
+  &__title {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-20;
+    margin-bottom: 15px;
+  }
+
+  &__description {
+    font-weight: $font-weight-normal;
+    font-size: $font-size-15;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: $screen-width-medium) {
+  .features {
+    width: 285px;
+  }
+}

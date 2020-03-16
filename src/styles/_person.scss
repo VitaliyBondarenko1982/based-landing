@@ -1,0 +1,57 @@
+@import "vars";
+@import "mixins";
+
+.person {
+  &__logo {
+    position: relative;
+    margin: auto;
+    width: 155px;
+    height: 155px;
+    background-color: $white-color;
+    border: 8px solid $lightgrey-color;
+    margin-bottom: 30px;
+  }
+
+  &__logo::before {
+    width: 219px;
+    height: 68px;
+    background-color: $white-color;
+  }
+
+  &__logo::after {
+    width: 110px;
+    height: 110px;
+    background-color: $white-color;
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    z-index: 1;
+  }
+
+  &__name {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-20;
+    color: $grey-text-color;
+    line-height: 25px;
+    margin-bottom: 15px;
+  }
+
+  &__job {
+    font-weight: $font-weight-normal;
+    font-size: $font-size-15;
+    line-height: 25px;
+    color: $orange-color;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: $screen-width-medium) {
+  .person {
+    width: 215px;
+  }
+}

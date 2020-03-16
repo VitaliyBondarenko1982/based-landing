@@ -1,0 +1,69 @@
+@import "vars";
+@import "mixins";
+
+.team {
+  min-width: 320px;
+  padding: 30px 20px;
+  text-align: center;
+
+  &__title {
+    font-size: $font-size-30;
+    color: $orange-color;
+    font-weight: $font-weight-normal;
+    margin-bottom: 30px;
+  }
+
+  &__line {
+    margin-bottom: 20px;
+  }
+
+  &__line::before,
+  &__line::after {
+    background: linear-gradient(90deg, $orange-color 50%,
+    rgba(0, 0, 0, 0) 100%);
+  }
+
+  &__description {
+    position: relative;
+    color: $grey-text-color;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: $font-size-20;
+    line-height: 25px;
+    font-style: italic;
+    margin-bottom: 70px;
+  }
+
+  &__description::after {
+    content: "*****";
+    position: absolute;
+    bottom: -35px;
+    @include horizontal-centered;
+  }
+}
+
+@media (min-width: 640px) {
+  .team {
+    padding: 72px 20px;
+
+    &__title {
+      font-size: $font-size-50;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 550px;
+      margin: auto;
+      margin-bottom: 75px;
+    }
+  }
+}
+
+@media (min-width: $screen-width-biggest) {
+  .team {
+    &__list {
+      width: 1090px;
+    }
+  }
+}
